@@ -1,0 +1,36 @@
+﻿@model List<Lottary>
+@{
+    ViewBag.Title = "Powerball Ticket List";
+}
+
+<h2>Powerball Ticket List</h2>
+<a asp-controller="PowerBall" asp-action="Create">Add New Powerball Ticket</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Location</th>
+            <th>Powerball Numbers</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in Model)
+        {
+            <tr>
+                <td>@ticket.FullName</td>
+                <td>@ticket.Gender</td>
+                <td>@ticket.Age</td>
+                <td>@ticket.Location</td>
+                <td>@ticket.PowerballNumbers</td>
+                <td>
+                    <a asp-controller="Lottary" asp-action="Edit" asp-route-id="@ticket.Id">Edit</a>
+                    <a asp-controller="Lottary" asp-action="Delete" asp-route-id="@ticket.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

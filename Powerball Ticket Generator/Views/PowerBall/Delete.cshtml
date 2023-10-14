@@ -1,0 +1,15 @@
+﻿@model Lottary
+
+@{
+    ViewBag.Title = "Delete Powerball Ticket";
+}
+
+
+<h2>Confirm Deletion</h2>
+<h3>@Model.FullName</h3>
+
+<form asp-action="Delete" method="post">
+    <!-- ... -->
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-controller="Lottary" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>
